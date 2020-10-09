@@ -1,0 +1,20 @@
+SilverStripe\Control\Director:
+  rules:
+    'graphql': '%$SilverStripe\GraphQL\Controller.default'
+# SilverStripe\GraphQL\Manager:
+#   schemas:
+#     default:
+#       scaffolding_providers:
+      # - Test\Post
+SilverStripe\GraphQL\Manager:
+  schemas:
+    default:
+      scaffolding:
+        types:
+          Test\Post:
+            fields: [ID, Title, Content]
+            operations:
+              read: 
+                paginate: false
+              create: true
+    
